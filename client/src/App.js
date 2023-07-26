@@ -1,17 +1,23 @@
 import { Route, useLocation, BrowserRouter, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
-import { accessToken, logout, getCurrentUserProfile } from "./spotify";
-import { catchErrors } from "./utils";
+import { accessToken, logout } from "./spotify";
 import { GlobalStyle } from "./styles";
-import { Login, Profile, TopArtists , TopTracks, Playlists, Playlist } from "./pages";
-import styled from 'styled-components/macro';
+import {
+  Login,
+  Profile,
+  TopArtists,
+  TopTracks,
+  Playlists,
+  Playlist,
+} from "./pages";
+import styled from "styled-components/macro";
 
 const StyledLogoutButton = styled.button`
   position: absolute;
   top: var(--spacing-sm);
   right: var(--spacing-md);
   padding: var(--spacing-xs) var(--spacing-sm);
-  background-color: rgba(0,0,0,.7);
+  background-color: rgba(0, 0, 0, 0.7);
   color: var(--white);
   font-size: var(--fz-sm);
   font-weight: 700;
@@ -35,18 +41,8 @@ function ScrollToTop() {
 }
 function App() {
   const [token, setToken] = useState(null);
-  const [profile, setProfile] = useState(null);
   useEffect(() => {
     setToken(accessToken);
-
-    const fetchData = async () => {
-      if (accessToken) {
-        const { data } = await getCurrentUserProfile();
-        setProfile(data);
-      }
-    };
-
-    catchErrors(fetchData());
   }, []);
 
   return (
@@ -61,46 +57,11 @@ function App() {
             <>
               <StyledLogoutButton onClick={logout}>Log Out</StyledLogoutButton>
               <Routes>
-                <Route
-                  path="/top-artists"
-                  element={
-                    <TopArtists />
-                  }
-                />
-                <Route
-                  path="/top-tracks"
-                  element={
-                    <TopTracks/>
-                  }
-                />
-                <Route
-                  path="/playlists/:id"
-                  element={
-                    <Playlist />
-                  }
-                />
-                <Route
-                  path="/playlists"
-                  element={
-                    <Playlists />
-                  }
-                />
+                <Route path="/top-artists" element={<TopArtists />} />
+                <Route path="/top-tracks" element={<TopTracks />} />
+                <Route path="/playlists/:id" element={<Playlist />} />
+                <Route path="/playlists" element={<Playlists />} />
                 <Route path="/" element={<Profile />} />
-                {/*<Route
-                path="/"
-                element={
-                  <>
-                    <button onClick={logout}>Log Out</button>
-
-                    {profile && (
-                      <div>
-                        <h1>{profile.display_name}</h1>
-                        <p>{profile.followers.total} Followers</p>
-                      </div>
-                    )}
-                  </>
-                }
-              />*/}
               </Routes>
             </>
           )}

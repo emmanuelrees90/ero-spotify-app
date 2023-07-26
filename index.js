@@ -62,7 +62,6 @@ app.get("/login", (req, res) => {
 
 app.get("/callback", (req, res) => {
   const code = req.query.code || null;
-  console.log(code)
   axios({
     method: "post",
     url: "https://accounts.spotify.com/api/token",
@@ -77,13 +76,6 @@ app.get("/callback", (req, res) => {
     },
   })
     .then((response) => {
-      //console.log('response after callback')
-      /*if (response.status === 200) {
-        res.send(response.data)
-        res.redirect(`http://localhost:3000/`);
-      } else {
-        res.send(response)
-      }*/
       if (response.status === 200) {
         const { access_token, refresh_token, expires_in } = response.data;
         const queryParams = querystring.stringify({
@@ -120,7 +112,6 @@ app.get("/refresh_token", (req, res) => {
     },
   })
     .then((response) => {
-      console.log(`refresh token`);
       if (response.status === 200) {
         res.send(response.data);
       }
