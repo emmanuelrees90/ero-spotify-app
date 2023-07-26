@@ -36,8 +36,6 @@ const Profile = () => {
     catchErrors(fetchData());
   }, []);
 
-  console.log(topTracks);
-
   return (
     <>
       {profile && (
