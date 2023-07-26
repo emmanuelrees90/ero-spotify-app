@@ -10,7 +10,7 @@ import {
 
 const TopArtists = () => {
   const [topArtists, setTopArtists] = useState(null);
-  const [activeRange, setActiveRange] = useState("short");
+  const [activeRange, setActiveRange] = useState("long");
 
   useEffect(() => {
     const fetchData = async () => {

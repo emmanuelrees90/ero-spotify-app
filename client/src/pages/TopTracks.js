@@ -10,7 +10,7 @@ import {
 
 const TopTracks = () => {
   const [topTracks, setTopTracks] = useState(null);
-  const [activeRange, setActiveRange] = useState("short");
+  const [activeRange, setActiveRange] = useState("long");
 
   useEffect(() => {
     const fetchData = async () => {

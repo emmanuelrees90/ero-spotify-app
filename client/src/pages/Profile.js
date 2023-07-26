@@ -14,6 +14,7 @@ import {
   Loader,
 } from "../components";
 import { StyledHeader } from "../styles";
+import profileImage from '../assets/emmanuel.jpg'
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -42,13 +43,10 @@ const Profile = () => {
         <>
           <StyledHeader type="user">
             <div className="header__inner">
-              {/*{profile.images.length && profile.images[0].url && (
-                                <img className="header__img" src={profile.images[0].url} alt="Avatar"/>
-                            )}*/}
               <img
                 className="header__img"
                 style={{ width: "150px", height: "150px", borderRadius: "50%" }}
-                src="/emmanuel.jpg"
+                src={profileImage}
                 alt="Avatar"
               />
               <div>
