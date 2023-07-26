@@ -11,13 +11,6 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
 const FRONTEND_URI = process.env.FRONTEND_URI;
 const PORT = process.env.PORT || 8080;
-
-/*app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));*/
-// Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, './client/build')));
 
 /*app.get("/", (req, res) => {

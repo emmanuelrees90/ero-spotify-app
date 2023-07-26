@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 const LOGIN_URI =
     process.env.NODE_ENV !== 'production'
         ? 'http://localhost:8080/login'
-        : 'https://spotify-profile-v2.herokuapp.com/login';
+        : 'https://ero-spotify-app-14b6ac45364e.herokuapp.com/login';
 
 const StyledLoginContainer = styled.main`
   display: flex;
