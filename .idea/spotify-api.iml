@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="personal-portfolio" />
+    <orderEntry type="module" module-name="react-restaurant-app" />
   </component>
 </module>

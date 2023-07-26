@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../personal-portfolio/.idea/personal-portfolio.iml" filepath="$PROJECT_DIR$/../personal-portfolio/.idea/personal-portfolio.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../react-restaurant-app/.idea/react-restaurant-app.iml" filepath="$PROJECT_DIR$/../react-restaurant-app/.idea/react-restaurant-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spotify-api.iml" filepath="$PROJECT_DIR$/.idea/spotify-api.iml" />
     </modules>
   </component>
